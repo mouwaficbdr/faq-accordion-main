@@ -85,3 +85,11 @@ body{
 .attribution{
   margin-top: 50px;
 }
+
+
+@media screen and (max-width: 540px){
+  .container{
+    width: 90%;
+    font-size: 12px;
+  }
+}
