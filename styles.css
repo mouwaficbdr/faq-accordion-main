@@ -18,6 +18,15 @@
   box-sizing: border-box;
 }
 
+li{
+  list-style: none;
+}
+
+button{
+  border: none;
+  background-color: var(--white);
+}
+
 body{
   position: relative;
   display: flex;
@@ -62,9 +71,17 @@ body{
 .section-head{
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
-.section-head h3:hover{
+.li-title{
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.li-title:hover{
   color: var(--purple);
   cursor: pointer;
 }

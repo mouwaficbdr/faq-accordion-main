@@ -1,25 +1,25 @@
-const plusBtns = document.querySelectorAll(".plus-icon");
+const button = document.querySelectorAll(".section-head");
 const minusIcon = "assets/images/icon-minus.svg"
 const plusIcon = 'assets/images/icon-plus.svg';
 
-plusBtns.forEach((btn) => {
+button.forEach((btn) => {
   btn.addEventListener('click', () => {
     toggleDetails(btn);
   });
 })
 
-const toggleDetails = (button) => {
-  const exclude = button;//The active and clicked button that should be excluded
-  if (button.getAttribute('src') !== plusIcon) {
-    button.setAttribute('src', plusIcon);
+const toggleDetails = (element) => {
+  const exclude = element;//The active and clicked element that should be excluded
+  if (element.lastElementChild.getAttribute('src') !== plusIcon) {
+    element.lastElementChild.setAttribute('src', plusIcon);
   } else {
-    button.setAttribute('src', minusIcon);
+    element.lastElementChild.setAttribute('src', minusIcon);
   }
-  button.parentElement.nextElementSibling.classList.toggle("hidden");
-  plusBtns.forEach((btn) => {
+  element.nextElementSibling.classList.toggle("hidden");
+  button.forEach((btn) => {
     if (btn != exclude) {
-      btn.parentElement.nextElementSibling.classList.add("hidden");  
-      btn.setAttribute('src', plusIcon);
+      btn.nextElementSibling.classList.add("hidden");  
+      btn.lastElementChild.setAttribute('src', plusIcon);
     }
-  })//Hide all other details section, shows only the one which the button had been clicked on and updates the icons
+  })//Hide all other details section, shows only the one which the element had been clicked on and updates the icons
 }
